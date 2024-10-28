@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash Flow Statement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cash Flow Statement</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="Incomestatement.html">Income Statement</a>
+      <a href="Balancesheet.html">Balance Sheet</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Cash Flow Calculator</h2>
+    <label for="cash-inflows">Cash Inflows ($):</label>
+    <input type="number" id="cash-inflows" placeholder="Enter cash inflows">
+    
+    <label for="cash-outflows">Cash Outflows ($):</label>
+    <input type="number" id="cash-outflows" placeholder="Enter cash outflows">
+    
+    <button onclick="calculateNetCashFlow()">Calculate Net Cash Flow</button>
+    
+    <h3>Results:</h3>
+    <p>Net Cash Flow: $<span id="net-cash-flow"></span></p>
+  </main>
+  <script>
+    function calculateNetCashFlow() {
+      const cashInflows = parseFloat(document.getElementById("cash-inflows").value) || 0;
+      const cashOutflows = parseFloat(document.getElementById("cash-outflows").value) || 0;
+      const netCashFlow = cashInflows - cashOutflows;
+      document.getElementById("net-cash-flow").textContent = netCashFlow.toFixed(2);
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Statement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Income Statement</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="Balancesheet.html">Balance Sheet</a>
+      <a href="Cashflow.html">Cash Flow Statement</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Income Statement Calculator</h2>
+    <label for="revenue">Revenue ($):</label>
+    <input type="number" id="revenue" placeholder="Enter revenue">
+    
+    <label for="expenses">Expenses ($):</label>
+    <input type="number" id="expenses" placeholder="Enter expenses">
+    
+    <button onclick="calculateNetIncome()">Calculate Net Income</button>
+    
+    <h3>Results:</h3>
+    <p>Net Income: $<span id="net-income"></span></p>
+  </main>
+  <script>
+    function calculateNetIncome() {
+      const revenue = parseFloat(document.getElementById("revenue").value) || 0;
+      const expenses = parseFloat(document.getElementById("expenses").value) || 0;
+      const netIncome = revenue - expenses;
+      document.getElementById("net-income").textContent = netIncome.toFixed(2);
+    }
+  </script>
+</body>
+</html>
